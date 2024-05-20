@@ -1,0 +1,8 @@
+# dynamically creating the uniquename using the function for resource group id
+
+
+az deployment group create \
+  --name storageaccountcreate \
+  --resource-group demo-cli \
+  --template-file arm-variable.json \
+  --parameters '{"storagePrefix": {"value":"store"}}' '{"storageSKU": {"value":"Standard_LRS"}}'

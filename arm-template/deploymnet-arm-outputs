@@ -1,0 +1,25 @@
+# dynamically creating the uniquename using the function for resource group id
+
+
+az deployment group create \
+  --name storageoutputscreate \
+  --resource-group demo-cli \
+  --template-file arm-outputs.json \
+  --parameters storagePrefix=rajstore storageSKU=Standard_LRS
+
+  output we will like this in json format
+
+
+   "outputs": {
+      "storageEndpoint": {
+        "type": "Object",
+        "value": {
+          "blob": "https://rajstores5lgxcd5jjlsc.blob.core.windows.net/",
+          "dfs": "https://rajstores5lgxcd5jjlsc.dfs.core.windows.net/",
+          "file": "https://rajstores5lgxcd5jjlsc.file.core.windows.net/",
+          "queue": "https://rajstores5lgxcd5jjlsc.queue.core.windows.net/",
+          "table": "https://rajstores5lgxcd5jjlsc.table.core.windows.net/",
+          "web": "https://rajstores5lgxcd5jjlsc.z13.web.core.windows.net/"
+        }
+      }
+

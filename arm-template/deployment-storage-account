@@ -1,0 +1,2 @@
+# this will create the storage account , you must be in storage-account.json path
+az deployment group create --name storeageaccountcreate --resource-group demo-cli --template-file storage-account.json

@@ -1,0 +1,15 @@
+
+#efault SKU is set to Standard_LRS , without parameters we can use this 
+az deployment group create \
+  --name addskuparameter \
+  --resource-group myResourceGroup \
+  --template-file $templateFile \
+  --parameters storageName={your-unique-name}
+
+
+# we set the storageSKU as parameters
+az deployment group create \
+  --name usenondefaultsku \
+  --resource-group myResourceGroup \
+  --template-file $templateFile \
+  --parameters storageSKU=Standard_GRS storageName={your-unique-name}
